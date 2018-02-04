@@ -1,0 +1,174 @@
+.board{
+	margin:0 auto;
+	padding:0 auto;
+	width:600px;
+	height:450px;
+	margin-top:50px;
+	background:rgb(210,210,210);/* 银色的背景颜色 */
+	border-radius:20px;/* 四个圆角 */
+	position:relative;
+	box-shadow:0px 5px 6px rgb(160,160,160);
+	background:-webkit-linear-gradient(60deg,rgba(250,250,250,1)25%,rgba(210,210,210,1)); 
+/* 在div的左下角到右上角以60度添加一个线性渐变 linear-gradient,也就是从白色开始从四分之一过度到灰色，因为之后的div 会用到绝对定位，所以再次先把其父元素board定位为relative.*/
+}
+
+.board:before{
+	content:'';
+	display:block;
+	width:780px;
+	height:20px;
+	background:rgb(210,210,210);
+	border-radius:0px 0px 3px 3px;
+	border-top-left-radius:390px 18px;
+	border-top-right-radius:390px 18px;
+	position:absolute;
+	top:-20px;
+	left:-90px;
+	border-bottom:2px solid rgb(0, 0, 0);
+	background:webkit-linear-gradient(top,rgb(210,210,210)50%,rgb(255,255,255));
+	/* board:before定位为绝对定位，board宽600px，盖子宽780px，
+	所以left=-(780-600)/2=-90px，top为board:before的高20px，顺带做出一个大弧形的效果，水平半径取大一些，垂直半径取小一些，like this：
+	390px是水平半径，18px是垂直半径 */
+
+}
+  
+ .blackbar{
+ 	width:450px;
+ 	height:18px;
+ 	position:absolute;
+ 	left:75px;
+ 	border-radious:2px;
+ 	border-bottom:2px solid #ffffff;/* 小白边 */
+ 	border-right:2px solid #ffffff;
+ 	background:-webkit-linear-gradient(top,rgb(30,30,30),rgb(60,60,60)35%,rgb(100,100,100)50%,rgb(30,30,30)65%);
+ 	background: -linear-gradient(top,rgb(30,30,30),rgb(60,60,60)35%,rgb(100,100,100)50%,rgb(30,30,30)65%);
+
+ }
+
+.keyboard{
+	position:absolute;
+	width:530px;
+	height:216px;
+	left:35px;
+	top:35px;
+	border:1px solid rgb(180,180,180);
+	border-radius:8px;
+	background:rgba(250,250,250,1);
+	/* 比平常的RGB多了一个透明度 */
+	box-shadow: 2px 0px 2px rgb(180,180,180)inset,
+	0px 3px 3px rgb(180,180,180)inset,
+	-5px -0px 1px rgb(255,255,255)inset,
+	0px -3px 3px rgb(180,180,180)inset;
+	/* 加了阴影，更加有立体感 */
+	border:1px solid rgb(70,70,70);
+	box-shadow:1px 0px 0px rgb(0,0,0),
+	0px 1px 0px rgb(0,0,0),
+	-1px 0px 0px rgb(0,0,0),
+	0px,-1px,0px rgb(0,0,0);
+	/* 给四个边加了边框线 */
+}
+
+	ul,li{
+		list-style:none;
+		margin:0 auto;
+		padding:0 auto;
+		display:block;
+		/* 块级元素会添加新行 */
+		font-family:"Vrinda";
+		-webkit-user-select:none;
+		-moz-user-select:none;
+		-ms-user-select:none;
+		user-select:none;
+		/* 上面4行代码的功能就是为了让鼠标上去选中那些字幕的时候，不会一片蓝蓝的 */
+	}
+
+	ul{
+		width:530px;
+		margin-top:8px;
+		padding-left:8px;
+	}
+
+	li{
+		width:29px;
+		height:29px;
+		float:left;
+		/* padding-left:0px; */
+		margin-right:5px;
+		margin-bottom:5px;
+		background-color:rgb(30,30,30);
+		color:rgb(200,200,200);
+		text-align:center;
+		/* 水平居中 */
+		line-height:28px;
+		/*垂直居中*/
+		font-size:12px;
+		border-radius:4px;
+		border:1px solid rgb(70,70,70);
+		box-shadow: 1px 0px 0px rgb(0,0,0),
+		0px 1px 0px rgb(0,0,0),
+		-1px 0px 0px rgb(0,0,0),
+		0px -1px 0px rgb(0,0,0);
+	}
+/* box-shadow是向边框添加阴影 */
+	li:nth-child(-n+14):nth-child(n+1){
+		width:30px;
+		height:15px;
+	}
+	/* 调整第一行的高度，采用链式写法 */
+    li:nth-child(-n+27):nth-child(n+16) span,li:nth-child(40) span,li:nth-child(41) span,li:nth-child(42) span,
+    li:nth-child(53) span,li:nth-child(54) span,li:nth-child(-n+66):nth-child(n+64) span{
+    display: block;
+    margin-top: 5px;
+    line-height: 0.5; 
+}
+	/* 这里就是调节69式的地方 */
+
+	li:nth-child(28),li:nth-child(29){
+		width:45px;
+	}
+
+	li:nth-child(43),li:nth-child(55){
+		width:55px;
+	}
+
+	li:nth-child(56),li:nth-child(67){
+		width:73px;
+	}
+
+	li:nth-child(-n+74):nth-child(n+68){
+		height:33px;
+	}
+	
+	li:nth-child(72){
+		width:173px;
+	}
+	li:nth-child(71),li:nth-child(73){
+		width:37px;
+	}
+
+	li:nth-child(75),li:nth-child(77),li:nth-child(78){
+		margin-top:18px;
+		height:14px;
+	}
+
+	li:nth-child(76){
+	height:13px;
+	margin-top:19px;
+	}
+	
+	li:nth-child(78){
+		position:absolute;
+		bottom:22px;
+		right:38px;
+	}
+	
+/* 关于nth-child选择器：nth-child(n):其父元素的第n个子元素; IE不支持这个选择器*/
+	.touch{
+		position:absolute;
+		width:200px;
+		height:150px;
+		border:2px solid rgb(190,190,190);
+		bottom:23px;
+		left:200px;
+		border-radius: 8px;
+	}
